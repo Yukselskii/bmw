@@ -1,0 +1,132 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Racing Sans One', sans-serif; /* Car-themed font */
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .confetti {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0057b8, #ffffff, #d2082d); /* M Power colors */
+    background-size: 100% 100%;
+    animation: pulseFade 6s infinite; /* Pulsive fade effect */
+  }
+  
+  /* Pulsive fade effect */
+  @keyframes pulseFade {
+    0%, 100% {
+      background: #0057b8; /* Dark blue */
+    }
+    33% {
+      background: #ffffff; /* White */
+    }
+    66% {
+      background: #d2082d; /* Red */
+    }
+  }
+  
+  /* Card styling */
+  .card {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  
+  .logo {
+    width: 350px; /* Increased size */
+    margin: 0 auto 20px;
+    animation: fadeIn 2s ease forwards, fall 2s ease forwards; /* Added fall animation */
+}
+  
+  /* Gradient text styling with BMW-inspired colors */
+  .header {
+    font-size: 3.5rem; /* Increased size */
+    margin: 0;
+    background: linear-gradient(90deg, #0057b8, #ffffff, #d2082d); /* BMW colors */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textAnimation 3s infinite, fall 2s ease forwards; /* Combined animations */
+  }
+  
+  .message {
+    font-size: 1.8rem; /* Increased size */
+    margin-top: 10px;
+    background: linear-gradient(90deg, #0057b8, #ffffff, #d2082d); /* BMW colors */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textAnimation 3s infinite, fall 2s ease forwards; /* Combined animations */
+  }
+  
+  /* Text animation */
+  @keyframes textAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes fall {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Confetti pieces */
+  .confetti-piece {
+    position: absolute;
+    top: -10px;
+    width: 6px;
+    height: 10px;
+    background-color: transparent;
+    opacity: 0.9;
+    animation: fallConfetti linear infinite;
+  }
+  
+  /* Falling confetti animation */
+  @keyframes fallConfetti {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 600px) {
+    .logo {
+      width: 80px;
+    }
+  
+    .header {
+      font-size: 2rem;
+    }
+  
+    .message {
+      font-size: 1rem;
+    }
+  }
+  
